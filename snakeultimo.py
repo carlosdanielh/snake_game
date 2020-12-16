@@ -98,20 +98,26 @@ def intro_juego():
                     salir()
         # se explica el cambio de las instruncciones al comer manzana y juego.
         linea_y = 40
-        background = load_image('inicio.jpg') #cambio fondo inicio.
+        background = load_image('inicio.jpg')  # cambio fondo inicio.
         background = pygame.transform.scale(background, (ancho, altura))
         superficie.blit(background, [0, 0])
         message_to_screen('¡Bienvenidos al Juego Snake!', negro, linea_y)
         linea_y += 20
-        message_to_screen('El objetivo del juego es controlar una serpiente usando', negro, linea_y)
+        message_to_screen('El objetivo del juego es controlar una serpiente '
+                          'usando', negro, linea_y)
         linea_y += 20
-        message_to_screen('teclas flechas de movimiento para comer manzanas.', negro, linea_y)
+        message_to_screen('teclas flechas de movimiento para comer manzanas.',
+                          negro, linea_y)
         linea_y += 20
-        message_to_screen('Si la serpiente toca el borde,pierdes.', negro, linea_y)
+        message_to_screen('Si la serpiente toca el borde,pierdes.',
+                          negro, linea_y)
         linea_y += 20
-        message_to_screen('Al tocar la manzana lila la serpiente crecerá.', negro, linea_y)
+        message_to_screen('Al tocar la manzana lila la serpiente crecerá.',
+                          negro, linea_y)
         linea_y += 20
-        message_to_screen('Si tocas la manzana verde la serpiente se movera mas rapido.', negro, linea_y)
+        message_to_screen('Si tocas la manzana verde la serpiente se movera'
+                          'mas rapido.', negro, linea_y)
+
         message_to_screen('¡MUCHA SUERTE!', negro, 500)
         message_to_screen('P - pausar', negro, 200)
         message_to_screen('C - continuar', negro, 250)
@@ -138,7 +144,7 @@ def serpiente(tamano_sep, listaSerpiente):
 
 
 def message(msg, valor, x, y):
-    if valor == None:
+    if valor is None:
         valor = ''
     text = font.render(msg + str(valor), True, negro)
     superficie.blit(text, [x, y])
